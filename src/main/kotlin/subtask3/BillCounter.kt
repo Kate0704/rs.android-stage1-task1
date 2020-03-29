@@ -1,10 +1,14 @@
 package subtask3
 
-class BillCounter {
+import kotlin.math.abs
 
-    // TODO: Complete the following function
-    // The output could be "Bon Appetit" or the string with number(e.g "10")
+class BillCounter {
     fun calculateFairlySplit(bill: IntArray, k: Int, b: Int): String {
-        throw NotImplementedError("Not implemented")
+
+        val resultBill = (bill.sum() - bill[k]) / 2
+        return if (resultBill == b)
+            "bon appetit"
+        else
+            (abs(resultBill - b)).toString()
     }
 }
